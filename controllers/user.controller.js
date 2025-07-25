@@ -82,11 +82,7 @@ const registerUser = asyncHandler( async (req, res) => {
 
     const { subject, html } = getVerificationMailContent(otp);
 
-    await sendEmail({
-      to: email,
-      subject,
-      html
-    });
+    await sendEmail(email, subject, html)
     
     return res.status(201).json(
         new ApiResponse(200, createdUser, "User registered Successfully")
