@@ -34,6 +34,10 @@ const userSchema = new Schema(
     mailOTP: {
       type: String,
     },
+    otpExpiresAt: {
+        type: Date,
+        required: true,
+    },
     isMailVerified: {
       type: Boolean,
       default: false,
